@@ -1,67 +1,60 @@
 <!doctype html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#101827">
-  <title>GitHub AI Publisher</title>
-  <style>
-    :root{color-scheme:dark;--bg:#0b1220;--panel:#121d30;--panel2:#17243a;--line:#293950;--muted:#9aabc2;--text:#eef4ff;--blue:#7c9cff;--mint:#71e0c0;--danger:#ff9c9c}
-    *{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 15% 0%,#1b3151 0,transparent 42%),var(--bg);color:var(--text);font:16px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
-    .wrap{width:min(1040px,calc(100% - 36px));margin:auto;padding:54px 0 72px}.top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:54px}.brand{display:flex;align-items:center;gap:12px;font-weight:750;letter-spacing:.2px}.logo{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,#7898ff,#66dfc2);color:#07111d;font-size:20px}.tag{border:1px solid #38506d;border-radius:999px;padding:5px 11px;color:#b7c8df;font-size:12px}
-    .hero{max-width:720px;margin-bottom:34px}.eyebrow{color:var(--mint);font-size:13px;font-weight:700;letter-spacing:1.7px;text-transform:uppercase}.hero h1{font-size:clamp(38px,7vw,64px);line-height:1.08;letter-spacing:-2px;margin:12px 0 18px}.hero h1 span{background:linear-gradient(90deg,#a9baff,#7ce5c9);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{color:var(--muted);font-size:17px;max-width:620px;margin:0}
-    .grid{display:grid;grid-template-columns:1.35fr .85fr;gap:20px;align-items:start}.panel{background:linear-gradient(180deg,rgba(24,39,61,.96),rgba(16,28,45,.96));border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:0 18px 55px #0002}.panel h2{font-size:18px;margin:0 0 5px}.sub{color:var(--muted);font-size:13px;margin:0 0 20px}
-    .drop{border:1.5px dashed #526b8c;border-radius:16px;padding:36px 18px;text-align:center;background:#0c1728;transition:.2s}.drop.over{border-color:var(--mint);background:#122b34}.upload-icon{width:52px;height:52px;margin:0 auto 12px;border-radius:15px;background:#203553;display:grid;place-items:center;font-size:25px}.drop strong{display:block;font-size:16px}.drop p{color:var(--muted);font-size:13px;margin:5px 0 17px}.btn{border:0;border-radius:10px;padding:11px 17px;background:linear-gradient(100deg,#91a8ff,#76dfc4);color:#0a1722;font-weight:750;cursor:pointer;font-size:14px}.btn:disabled{opacity:.4;cursor:not-allowed}.btn.secondary{background:#233550;color:#eaf1ff;border:1px solid #3b506d}.hidden{display:none}
-    .files-head{display:flex;justify-content:space-between;align-items:center;margin:22px 0 10px;font-size:13px;color:#c5d2e4}.file-list{display:grid;gap:8px}.file{display:flex;align-items:center;gap:10px;background:#0e1a2b;border:1px solid #25364d;border-radius:11px;padding:10px 12px;font-size:13px}.file-icon{font-size:17px}.file-name{flex:1;min-width:0;overflow-wrap:anywhere}.file-size{color:var(--muted);white-space:nowrap;font-size:12px}.empty{color:#7588a2;text-align:center;font-size:13px;padding:13px;border:1px dashed #2b3c54;border-radius:10px}
-    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.result{margin-top:16px;border-radius:12px;background:#0b1727;border:1px solid #2b405b;padding:14px;font-size:13px;color:#c8d6e9}.result h3{font-size:14px;margin:0 0 8px;color:#fff}.result ul{margin:0;padding-left:20px}.good{color:var(--mint)}.warn{color:#ffd28b}.bad{color:var(--danger)}
-    .steps{display:grid;gap:14px}.step{display:flex;gap:12px;align-items:flex-start}.num{width:27px;height:27px;flex:none;border-radius:9px;display:grid;place-items:center;background:#233b5b;color:#b9cbff;font-size:12px;font-weight:800}.step strong{display:block;font-size:13px}.step span{display:block;color:var(--muted);font-size:12px;margin-top:2px}.status{margin-top:22px;padding:13px;border-radius:12px;background:#102b2c;border:1px solid #24534f;color:#a7ead8;font-size:12px}.foot{text-align:center;color:#6f829c;font-size:12px;margin-top:30px}
-    @media(max-width:760px){.wrap{padding-top:28px}.top{margin-bottom:38px}.grid{grid-template-columns:1fr}.panel{padding:19px}.hero h1{letter-spacing:-1.3px}}
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#101827">
+<title>GitHub AI Publisher</title>
+<style>
+:root{color-scheme:dark;--bg:#0b1220;--panel:#121d30;--line:#293950;--muted:#9aabc2;--text:#eef4ff;--mint:#71e0c0;--danger:#ff9c9c}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 15% 0%,#1b3151 0,transparent 42%),var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{width:min(1040px,calc(100% - 36px));margin:auto;padding:44px 0 70px}.top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:48px}.brand{display:flex;align-items:center;gap:12px;font-weight:750}.logo{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,#7898ff,#66dfc2);color:#07111d;font-size:20px}.tag{border:1px solid #38506d;border-radius:999px;padding:5px 11px;color:#b7c8df;font-size:12px}
+.hero{max-width:720px;margin-bottom:32px}.eyebrow{color:var(--mint);font-size:13px;font-weight:700;letter-spacing:1.7px}.hero h1{font-size:clamp(38px,7vw,64px);line-height:1.08;letter-spacing:-2px;margin:12px 0 18px}.hero h1 span{background:linear-gradient(90deg,#a9baff,#7ce5c9);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{color:var(--muted);font-size:17px;margin:0}
+.grid{display:grid;grid-template-columns:1.35fr .85fr;gap:20px;align-items:start}.panel{background:linear-gradient(180deg,rgba(24,39,61,.96),rgba(16,28,45,.96));border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:0 18px 55px #0002}.panel h2{font-size:18px;margin:0 0 5px}.sub{color:var(--muted);font-size:13px;margin:0 0 20px}
+.drop{border:1.5px dashed #526b8c;border-radius:16px;padding:30px 18px;text-align:center;background:#0c1728;transition:.2s}.drop.over{border-color:var(--mint);background:#122b34}.upload-icon{width:52px;height:52px;margin:0 auto 12px;border-radius:15px;background:#203553;display:grid;place-items:center;font-size:25px}.drop strong{display:block}.drop p{color:var(--muted);font-size:13px;margin:5px 0 16px}.btn{border:0;border-radius:10px;padding:11px 16px;background:linear-gradient(100deg,#91a8ff,#76dfc4);color:#0a1722;font-weight:750;cursor:pointer;font-size:14px}.btn:disabled{opacity:.4;cursor:not-allowed}.btn.secondary{background:#233550;color:#eaf1ff;border:1px solid #3b506d}.hidden{display:none}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}.files-head{display:flex;justify-content:space-between;margin:21px 0 9px;font-size:13px;color:#c5d2e4}.file-list{display:grid;gap:7px;max-height:260px;overflow:auto}.file{display:flex;align-items:center;gap:9px;background:#0e1a2b;border:1px solid #25364d;border-radius:10px;padding:9px 11px;font-size:12px}.file-name{flex:1;min-width:0;overflow-wrap:anywhere}.file-size{color:var(--muted);white-space:nowrap}.empty{color:#7588a2;text-align:center;font-size:13px;padding:13px;border:1px dashed #2b3c54;border-radius:10px}
+.result{margin-top:15px;border-radius:12px;background:#0b1727;border:1px solid #2b405b;padding:14px;font-size:13px;color:#c8d6e9}.result h3{font-size:14px;margin:0 0 8px;color:#fff}.result ul{margin:0;padding-left:20px}.good{color:var(--mint)}.warn{color:#ffd28b}.bad{color:var(--danger)}.steps{display:grid;gap:14px}.step{display:flex;gap:12px}.num{width:27px;height:27px;flex:none;border-radius:9px;display:grid;place-items:center;background:#233b5b;color:#b9cbff;font-size:12px;font-weight:800}.step strong{display:block;font-size:13px}.step span{display:block;color:var(--muted);font-size:12px;margin-top:2px}.status{margin-top:22px;padding:13px;border-radius:12px;background:#102b2c;border:1px solid #24534f;color:#a7ead8;font-size:12px}.foot{text-align:center;color:#6f829c;font-size:12px;margin-top:28px}
+@media(max-width:760px){.wrap{padding-top:26px}.top{margin-bottom:36px}.grid{grid-template-columns:1fr}.panel{padding:19px}.hero h1{letter-spacing:-1.3px}}
+</style>
 </head>
 <body>
-  <main class="wrap">
-    <header class="top"><div class="brand"><div class="logo">↗</div>GitHub AI Publisher</div><div class="tag">EARLY PROTOTYPE · v0.1</div></header>
-    <section class="hero"><div class="eyebrow">YOUR WEBSITE, ONLINE</div><h1>Upload. <span>Publish.</span> Done.</h1><p>把網站檔案交給我們。先檢查檔案是否完整，再逐步完成 GitHub 自動發布。</p></section>
-    <section class="grid">
-      <div class="panel">
-        <h2>上傳你的網站檔案</h2><p class="sub">可選擇多個 HTML、CSS、JavaScript、圖片等檔案。</p>
-        <div class="drop" id="drop">
-          <div class="upload-icon">⇧</div><strong>把檔案拖曳到這裡</strong><p>或從電腦選取檔案 · 支援 HTML、CSS、JS、圖片及 ZIP</p>
-          <button class="btn" id="choose">選擇檔案</button>
-          <input class="hidden" id="picker" type="file" multiple accept=".html,.htm,.css,.js,.json,.png,.jpg,.jpeg,.gif,.svg,.webp,.ico,.txt,.zip,.woff,.woff2">
-        </div>
-        <div class="files-head"><span>已選擇的檔案</span><span id="count">0 個檔案</span></div>
-        <div class="file-list" id="files"><div class="empty">目前還沒有選擇檔案</div></div>
-        <div class="actions"><button class="btn" id="check" disabled>開始檢查網站</button><button class="btn secondary" id="clear" disabled>清除檔案</button></div>
-        <div id="result" aria-live="polite"></div>
-      </div>
-      <aside class="panel">
-        <h2>發布流程</h2><p class="sub">我們會一步一步完成，不需要你手動操作 GitHub。</p>
-        <div class="steps">
-          <div class="step"><div class="num">01</div><div><strong>上傳網站檔案</strong><span>選擇 HTML、CSS、JS 或 ZIP</span></div></div>
-          <div class="step"><div class="num">02</div><div><strong>AI 檢查網站</strong><span>確認首頁與檔案路徑是否完整</span></div></div>
-          <div class="step"><div class="num">03</div><div><strong>連接 GitHub</strong><span>安全授權你的 GitHub 帳號</span></div></div>
-          <div class="step"><div class="num">04</div><div><strong>自動發布網站</strong><span>建立或更新網站並取得網址</span></div></div>
-        </div>
-        <div class="status">● 目前版本：上傳介面與基本檔案檢查。GitHub 授權及自動發布功能正在開發中。</div>
-      </aside>
-    </section>
-    <footer class="foot">GitHub AI Publisher · Built step by step</footer>
-  </main>
+<main class="wrap">
+<header class="top"><div class="brand"><div class="logo">↗</div>GitHub AI Publisher</div><div class="tag">PROTOTYPE · v0.2</div></header>
+<section class="hero"><div class="eyebrow">YOUR WEBSITE, ONLINE</div><h1>Upload. <span>Publish.</span> Done.</h1><p>上傳整包網站，先解壓縮並檢查首頁、檔案結構與常見連結問題。</p></section>
+<section class="grid">
+<div class="panel">
+<h2>上傳你的網站檔案</h2><p class="sub">支援 ZIP 壓縮檔、整個資料夾，或多個網站檔案。</p>
+<div class="drop" id="drop"><div class="upload-icon">⇧</div><strong>把 ZIP 或網站檔案拖曳到這裡</strong><p>也可以選擇整個網站資料夾。建議 ZIP 不超過 50 MB。</p>
+<div class="actions" style="justify-content:center"><button class="btn" id="choose">選擇檔案</button><button class="btn secondary" id="chooseFolder">選擇資料夾</button></div>
+<input class="hidden" id="picker" type="file" multiple accept=".html,.htm,.css,.js,.json,.png,.jpg,.jpeg,.gif,.svg,.webp,.ico,.txt,.zip,.woff,.woff2,.pdf">
+<input class="hidden" id="folderPicker" type="file" webkitdirectory directory multiple>
+</div>
+<div class="files-head"><span>網站檔案</span><span id="count">0 個檔案</span></div><div class="file-list" id="files"><div class="empty">尚未上傳檔案</div></div>
+<div class="actions"><button class="btn" id="check" disabled>檢查網站結構</button><button class="btn secondary" id="clear" disabled>清除檔案</button></div><div id="result" aria-live="polite"></div>
+</div>
+<aside class="panel"><h2>發布流程</h2><p class="sub">先確認網站本身完整，再連接 GitHub。</p><div class="steps">
+<div class="step"><div class="num">01</div><div><strong>上傳網站檔案</strong><span>ZIP、資料夾或個別檔案</span></div></div>
+<div class="step"><div class="num">02</div><div><strong>檢查網站結構</strong><span>讀取 ZIP、尋找首頁及檢查連結</span></div></div>
+<div class="step"><div class="num">03</div><div><strong>連接 GitHub</strong><span>安全授權你的 GitHub 帳號</span></div></div>
+<div class="step"><div class="num">04</div><div><strong>自動發布網站</strong><span>建立或更新網站並取得網址</span></div></div>
+</div><div class="status">● v0.2 已支援 ZIP 解壓縮、資料夾上傳與基本連結檢查。GitHub 授權及自動發布尚未開放。</div></aside>
+</section><footer class="foot">GitHub AI Publisher · Built step by step</footer>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script>
-  const picker=document.getElementById('picker'),drop=document.getElementById('drop'),filesBox=document.getElementById('files'),count=document.getElementById('count'),checkBtn=document.getElementById('check'),clearBtn=document.getElementById('clear'),result=document.getElementById('result');
-  let selected=[];
-  const formatSize=n=>n<1024?n+' B':n<1048576?(n/1024).toFixed(1)+' KB':(n/1048576).toFixed(1)+' MB';
-  const icon=name=>{const ext=name.split('.').pop().toLowerCase();return ({html:'🌐',htm:'🌐',css:'🎨',js:'⚙️',zip:'📦',png:'🖼️',jpg:'🖼️',jpeg:'🖼️',svg:'🖼️',webp:'🖼️',gif:'🖼️',json:'📋'})[ext]||'📄'};
-  function addFiles(list){for(const f of list){if(!selected.some(x=>x.name===f.name&&x.size===f.size))selected.push(f)}render()}
-  function render(){count.textContent=selected.length+' 個檔案';checkBtn.disabled=!selected.length;clearBtn.disabled=!selected.length;filesBox.innerHTML='';if(!selected.length){filesBox.innerHTML='<div class="empty">目前還沒有選擇檔案</div>';return}selected.forEach(f=>{const row=document.createElement('div');row.className='file';const i=document.createElement('span');i.className='file-icon';i.textContent=icon(f.name);const n=document.createElement('span');n.className='file-name';n.textContent=f.webkitRelativePath||f.name;const s=document.createElement('span');s.className='file-size';s.textContent=formatSize(f.size);row.append(i,n,s);filesBox.append(row)})}
-  document.getElementById('choose').addEventListener('click',()=>picker.click());picker.addEventListener('change',e=>addFiles(e.target.files));
-  ['dragenter','dragover'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.add('over')}));
-  ['dragleave','drop'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.remove('over')}));
-  drop.addEventListener('drop',e=>addFiles(e.dataTransfer.files));
-  document.getElementById('clear').addEventListener('click',()=>{selected=[];picker.value='';result.innerHTML='';render()});
-  checkBtn.addEventListener('click',async()=>{result.innerHTML='<div class="result">正在檢查檔案…</div>';const names=selected.map(f=>f.name.toLowerCase()),hasZip=names.some(n=>n.endsWith('.zip')),hasHtml=names.some(n=>n.endsWith('.html')||n.endsWith('.htm')),hasIndex=names.some(n=>n==='index.html'||n==='index.htm');let issues=[];if(!hasHtml&&!hasZip)issues.push(['bad','找不到 HTML 檔案。網站通常需要 index.html 作為首頁。']);else if(!hasIndex&&!hasZip)issues.push(['warn','有 HTML 檔案，但沒有找到 index.html。請確認首頁檔名。']);if(hasZip)issues.push(['warn','偵測到 ZIP 壓縮檔。本版本先辨識檔案，尚未解壓檢查內容。']);if(hasHtml&&hasIndex)issues.push(['good','已找到 index.html，可以作為網站首頁。']);const total=selected.reduce((a,f)=>a+f.size,0);const lines=issues.length?issues.map(x=>'<li class="'+x[0]+'">'+x[1]+'</li>').join(''):'<li class="good">檔案清單已讀取，尚未發現明顯問題。</li>';result.innerHTML='<div class="result"><h3>檢查結果</h3><ul>'+lines+'<li>共 '+selected.length+' 個檔案，大小 '+formatSize(total)+'。</li></ul><p style="color:#9aabc2;margin:10px 0 0">提醒：目前只做基本檔名檢查，尚未檢查 HTML 內部連結、圖片路徑或實際執行結果。</p></div>'});
-  render();
+const picker=document.getElementById('picker'),folderPicker=document.getElementById('folderPicker'),drop=document.getElementById('drop'),filesBox=document.getElementById('files'),count=document.getElementById('count'),checkBtn=document.getElementById('check'),clearBtn=document.getElementById('clear'),result=document.getElementById('result');
+let siteFiles=[];
+const MAX_FILES=1000,MAX_TOTAL=50*1024*1024;
+const fmt=n=>n<1024?n+' B':n<1048576?(n/1024).toFixed(1)+' KB':(n/1048576).toFixed(1)+' MB';
+const ext=p=>(p.split('/').pop().split('.').pop()||'').toLowerCase();
+const icon=p=>({html:'🌐',htm:'🌐',css:'🎨',js:'⚙️',zip:'📦',png:'🖼️',jpg:'🖼️',jpeg:'🖼️',svg:'🖼️',webp:'🖼️',gif:'🖼️',json:'📋'})[ext(p)]||'📄';
+function safePath(path){const p=path.replace(/\\/g,'/');return !p.startsWith('/')&&!/^[a-zA-Z]:/.test(p)&&!p.split('/').includes('..')}
+function addEntry(path,file){const clean=path.replace(/^\.\//,'');if(!safePath(clean))throw new Error('檔案路徑不安全：'+path);const i=siteFiles.findIndex(x=>x.path===clean);if(i>=0)siteFiles[i]={path:clean,file};else siteFiles.push({path:clean,file})}
+function render(){count.textContent=siteFiles.length+' 個檔案';checkBtn.disabled=!siteFiles.length;clearBtn.disabled=!siteFiles.length;filesBox.innerHTML='';if(!siteFiles.length){filesBox.innerHTML='<div class="empty">尚未上傳檔案</div>';return}siteFiles.slice(0,100).forEach(x=>{const row=document.createElement('div');row.className='file';const ic=document.createElement('span');ic.textContent=icon(x.path);const nm=document.createElement('span');nm.className='file-name';nm.textContent=x.path;const sz=document.createElement('span');sz.className='file-size';sz.textContent=fmt(x.file.size);row.append(ic,nm,sz);filesBox.append(row)});if(siteFiles.length>100){const more=document.createElement('div');more.className='empty';more.textContent='另外還有 '+(siteFiles.length-100)+' 個檔案未顯示';filesBox.append(more)}}
+async function ingest(list){result.innerHTML='<div class="result">正在讀取檔案…</div>';try{for(const f of list){if(f.name.toLowerCase().endsWith('.zip')){if(!window.JSZip)throw new Error('ZIP 解壓縮元件載入失敗，請重新整理網頁後再試。');if(f.size>MAX_TOTAL)throw new Error('ZIP 檔案超過 50 MB，請先縮小檔案。');const zip=await JSZip.loadAsync(f);const entries=Object.values(zip.files).filter(x=>!x.dir);if(entries.length>MAX_FILES)throw new Error('ZIP 內檔案超過 1000 個，請先整理檔案。');let total=0;for(const entry of entries){if(!safePath(entry.name))throw new Error('ZIP 內含不安全的檔案路徑：'+entry.name);const blob=await entry.async('blob');total+=blob.size;if(total>MAX_TOTAL)throw new Error('解壓縮後超過 50 MB，為保護瀏覽器已停止。');const file=new File([blob],entry.name.split('/').pop(),{type:blob.type||'application/octet-stream'});addEntry(entry.name,file)}}else{const path=f.webkitRelativePath||f.name;addEntry(path,f)}}if(siteFiles.length>MAX_FILES)throw new Error('檔案總數超過 1000 個，請先整理網站。');const total=siteFiles.reduce((n,x)=>n+x.file.size,0);if(total>MAX_TOTAL)throw new Error('網站檔案總大小超過 50 MB，請先縮小檔案。');render();result.innerHTML='<div class="result"><span class="good">已成功讀取 '+siteFiles.length+' 個檔案（'+fmt(total)+'）。</span> 現在可以檢查網站結構。</div>'}catch(e){result.innerHTML='<div class="result"><span class="bad">讀取失敗：</span>'+escapeHtml(e.message)+'</div>'} }
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+document.getElementById('choose').onclick=()=>picker.click();document.getElementById('chooseFolder').onclick=()=>folderPicker.click();picker.onchange=e=>ingest(e.target.files);folderPicker.onchange=e=>ingest(e.target.files);
+['dragenter','dragover'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.add('over')}));['dragleave','drop'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.remove('over')}));drop.addEventListener('drop',e=>ingest(e.dataTransfer.files));
+clearBtn.onclick=()=>{siteFiles=[];picker.value='';folderPicker.value='';result.innerHTML='';render()};
+checkBtn.onclick=async()=>{result.innerHTML='<div class="result">正在分析網站內容…</div>';const paths=new Set(siteFiles.map(x=>x.path));const htmls=siteFiles.filter(x=>/\.html?$/i.test(x.path));const index=siteFiles.find(x=>x.path.toLowerCase()==='index.html');const nestedIndex=siteFiles.filter(x=>x.path.toLowerCase().endsWith('/index.html'));const issues=[];if(!index&&!nestedIndex.length)issues.push(['bad','找不到 index.html。請確認網站首頁檔案是否存在。']);else if(!index&&nestedIndex.length)issues.push(['warn','找到 '+nestedIndex.length+' 個子資料夾首頁，但網站根目錄沒有 index.html。可能需要把網站資料夾內的檔案移到最外層。']);else issues.push(['good','已找到根目錄 index.html。']);if(!htmls.length)issues.push(['bad','沒有找到任何 HTML 檔案。']);let checked=0,missing=new Set();for(const item of htmls){if(item.file.size>2*1024*1024)continue;const source=await item.file.text();const doc=new DOMParser().parseFromString(source,'text/html');const refs=[...doc.querySelectorAll('[src],[href]')].map(el=>el.getAttribute('src')||el.getAttribute('href')).filter(Boolean);for(const ref of refs){if(/^(https?:|mailto:|tel:|data:|javascript:|#|\/\/)/i.test(ref))continue;const clean=decodeURIComponent(ref.split(/[?#]/)[0]);if(!clean)continue;const base=item.path.includes('/')?item.path.slice(0,item.path.lastIndexOf('/')+1):'';const target=(base+clean).split('/');const normalized=[];for(const part of target){if(part==='.'||!part)continue;if(part==='..')normalized.pop();else normalized.push(part)}const resolved=normalized.join('/');checked++;if(!paths.has(resolved)&&!paths.has(resolved+'/index.html'))missing.add(resolved)}}if(missing.size)issues.push(['warn','有 '+missing.size+' 個本機連結或資源路徑找不到對應檔案：'+[...missing].slice(0,8).join('、')+(missing.size>8?'…':'')]);else if(checked)issues.push(['good','已檢查 '+checked+' 個 HTML 連結／資源路徑，未發現缺少的本機檔案。']);const total=siteFiles.reduce((n,x)=>n+x.file.size,0);result.innerHTML='<div class="result"><h3>網站檢查報告</h3><ul>'+issues.map(x=>'<li class="'+x[0]+'">'+escapeHtml(x[1])+'</li>').join('')+'<li>檔案數：'+siteFiles.length+'；總大小：'+fmt(total)+'。</li></ul><p style="color:#9aabc2;margin:10px 0 0">這是初步靜態檢查，尚未執行網站程式，也不代表所有 JavaScript 或 CSS 功能都正常。</p></div>'};
+render();
 </script>
-</body>
-</html>
+</body></html>
